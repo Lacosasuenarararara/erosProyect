@@ -1,0 +1,75 @@
+/* EFECTOS */
+.modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalmask:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* FORMATO DE LA VENTANA */
+.modalbox {
+    width: 80%;
+    max-width: 1000px;
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    border-radius: 3px;
+    max-height: 80%; /* Limit the height of the modal */
+    overflow-y: auto; /* Enable vertical scroll */
+    margin: 5% auto; /* Center the modal */
+    transition: all 500ms ease-in;
+    text-align: justify;
+}
+
+/* MOVIMIENTOS */
+.movedown {
+    margin: 0 auto;
+}
+
+.rotate {
+    margin: 10% auto;
+    transform: scale(-5, -5);
+}
+
+.resize {
+    margin: 10% auto;
+    width: 0;
+    height: 0;
+}
+
+.modalmask:target .movedown {
+    margin: 5% auto;
+}
+
+/* BOTÓN DE CERRAR */
+.close {
+    background: #606061;
+    color: #fff;
+    line-height: 25px;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    top: 1px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.close:hover {
+    transition: 0.3s;
+    background: #ff0011;
+    color: #ffffff;
+}
